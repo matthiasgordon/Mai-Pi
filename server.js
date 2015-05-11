@@ -66,10 +66,12 @@ app.get('/test', function(req, res) {
 
 app.get('/shutdown', function(req, res) {
     	exec("sudo shutdown -h now");
+		res.send({"state": "ok"});
 });
 
 app.get('/reboot', function(req, res) {
     	exec("sudo reboot");
+		res.send({"state": "ok"});
 });
 
 app.listen(3000);
